@@ -1,0 +1,40 @@
+title
+Binary Palindrome Decider
+
+description
+Given an array of a's and b's,
+accepts it if it is a palindrome
+
+
+vertices
+0 L 0.6 0.5
+1 R 0.4 0.5
+2 R 0.2 0.2
+3 R 0.2 0.8
+4 L 0.8 0.2
+5 L 0.8 0.8
+6 N 0.8 0.5
+7 Y 0.2 0.5
+
+edges
+0 1 # # 
+1 2 b #
+1 3 a #
+1 7 # #
+2 4 # #
+3 5 # #
+4 0 b #
+4 6 a a
+5 0 a #
+5 6 b b
+4 1 # #
+5 1 # #
+
+tapes
+[b] a a b
+[b] b b a
+[b] a b a b a a b a b a b
+[b] a b a a b
+[b] b b b b
+[b] a b a b
+[a] a b a a

@@ -1,0 +1,19 @@
+title
+Binary Counter
+
+description
+A binary counter which writes each new number over the previous one.
+
+vertices
+0 R 0.2 0.5 
+1 L 0.7 0.5 
+
+edges
+0 1 # # 0.35
+1 0 0 1 0.5
+1 1 1 0 0
+1 0 # 1 0.2
+
+tapes
+[0] 
+1 1 1 1 1 1 1 1 1 [0]

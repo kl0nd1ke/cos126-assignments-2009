@@ -1,0 +1,28 @@
+title
+Unary-to-Binary Converter
+
+description
+Converts a sequence of a's to a binary number.
+
+vertices
+0 R 0.3 0.6
+1 L 0.7 0.6
+2 L 0.3 0.2
+3 H 0.7 0.2
+
+edges
+0 2 # #  
+0 1 a X 
+1 1 1 0
+1 0 0 1  -.4
+1 0 # 1  +.4
+2 2 X #  180
+2 3 0 0  -.2
+2 3 1 1  +.2
+
+tapes
+# [a] a a a a a a a a a
+# [a] a a
+# [a] a a a a
+# [a] a a a a a a a a a a a a a a
+# [a]

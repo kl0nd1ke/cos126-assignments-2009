@@ -1,0 +1,36 @@
+title
+Comparator
+description
+Compares two binary numbers. Terminates in a yes state
+if the first number is strictly greater than the second;
+otherwise, terminates in a no state.
+vertices
+2 R 0.25 0.75
+0 L 0.25 0.25
+1 L 0.75 0.25
+3 N 0.40 0.60
+4 L 0.50 0.40
+5 Y 0.60 0.60
+edges
+
+0 0 0 1 135
+
+0 1 1 0 -0.1
+0 3 # #
+0 4 > >
+
+1 0 > > -0.1
+1 2 # # 0.6
+2 0 # #
+4 3 # #
+4 5 1 1
+tapes
+
+[1] 1 1 0 > 1 1 1 1
+[1] 1 1 1 > 1 1 1 0
+[1] 0 0 0 > 1 1 1
+[1] 1 1 > 1 0 0 0
+[1] 1 1 1 > 1 1
+[1] 1 > 1 1 1 1
+[1] 0 0 > 1
+[1] > 1 0 0

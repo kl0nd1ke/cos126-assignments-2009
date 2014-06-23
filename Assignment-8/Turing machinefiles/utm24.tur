@@ -1,0 +1,114 @@
+title 
+Universal Turing Machine
+
+description
+A 24-state Univeral Turing Machine.  The left end of the tape 
+(up to the first y) is the input/output area, and the right 
+end is the machine description. 'm' marks the current tape position. 
+Note that the I/O tape doesnot extend infinitely to the right, 
+only to the left. Between the first y and the first x is the current 
+state (in binary) followed by the symbol on the current tape cell (0 or 1). 
+The machine description is a list of transitions, separated by the character x 
+(the final transition is followed by a y).  Each transition is written as 
+{old state, old symbol, new state, new symbol, direction (0 for left, 1 for right).} 
+So, for instance: 
+"x 0 1 1 1 1 0 1 x" 
+means "If the current state is 1 and the current symbol is 1, 
+go to state 3, write 0, and shift right.  Each state must use the same number 
+of binary digits, and the area between the first y and the fist x must be the length 
+of a state name + 1 (to hold the current symbol).  The default 
+symbol for new tape cells is 0 for this machine. The UTM halts if it encounters 
+a state-symbol pair that is not listed in the machine description (So, 
+to create a halt state, create a state with no transitions coming out of it.) 
+This UTM includes one tape, which programs the binary counter.
+
+fill symbol
+0
+
+
+vertices
+1 L 0.4 0.2
+2 R 0.2 0.2
+3 R 0.1 0.6
+4 R 0.2 0.8
+5 R 0.3 0.6
+6 L 0.2 0.4
+
+7 R 0.4 0.8
+8 L 0.5 0.7
+9 L 0.5 0.9
+10 R 0.6 0.7
+11 R 0.6 0.9
+12 R 0.7 0.8
+
+13 L 0.8 0.7
+14 L 0.8 0.9
+15 R 0.9 0.8
+16 R 0.9 0.5
+17 L 0.9 0.2
+
+18 L 0.7 0.3
+19 L 0.7 0.1
+20 R 0.6 0.3
+21 L 0.6 0.1
+22 R 0.5 0.3
+23 R 0.5 0.1
+
+24 H 0.3 0.3
+
+edges
+1 1 0 a 90
+1 1 1 b -135
+1 4 y y 0.6
+2 1 x x 0.2
+2 24 y y
+3 2 1 b
+3 6 0 a
+4 3 a 0
+4 5 b 1
+4 7 x x
+5 2 0 a
+5 6 1 b
+6 4 y y
+
+7 8 1 b
+7 9 0 a
+8 10 y y
+9 11 y y
+10 12 0 b
+10 12 1 b
+10 13 x x
+11 12 0 a
+11 12 1 a
+11 14 x x
+12 7 x x
+
+13 15 m b
+14 15 m a
+15 15 b 1 30
+15 15 a 0 -90
+15 16 x x 
+16 17 1 1 0.2
+16 17 0 0 -0.2
+17 17 b 1 90
+17 17 a 0
+17 18 0 s
+17 19 1 s
+
+18 20 b 0 
+18 21 a 0 0.4
+19 20 b 1 0.4
+19 21 a 1
+20 22 0 m
+20 23 1 m 0.4
+21 22 0 m 0.4
+21 23 1 m
+22 1 s a
+23 1 s b
+
+tapes
+//binary counter
+0 0 0 m 0 0 0 y 0 [1] x 0 0 0 0 1 x 0 1 1 1 0 x 1 0 0 1 1 x 1 1 1 0 0 y
+
+//parity detector
+//m 0 1 1 y 0 0 [1] x 0 0 0 0 0 0 1 x 0 0 1 0 1 1 1 x 0 0 y 1 0 1 1 x 0 1 0 0 1 0 1 x 0 1 1 0 1 0 1 x 0 1 y 1 0 0 1 y

@@ -1,0 +1,35 @@
+title 
+Dragon Curve
+
+description
+Given a string of 2^n -1 0's, produces
+a sequence of L's and R's corresponding
+to the dragon curve of length 2^n - 1.
+Rejects input if the number of 0's
+is not a power of 2, minus 1,
+
+vertices
+0 L 0.1 0.5 
+1 R 0.3 0.25
+2 R 0.6 0.25
+3 R 0.6 0.75
+4 R 0.3 0.75
+5 H 0.9 0.25
+6 N 0.45 0.5
+
+edges
+0 1 # #
+1 2 0 L
+1 6 # #
+2 3 0 0
+2 5 # #
+3 4 0 R
+3 6 # #
+4 0 # #
+4 1 0 0
+
+
+tapes
+[0] 0 0
+[0] 0 0 0 0 0 0
+[0] 0 0 0 0 0 0 0 0 0 0 0 0 0 0

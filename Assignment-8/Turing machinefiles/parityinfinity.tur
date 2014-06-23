@@ -1,0 +1,27 @@
+title 
+Parity-Infinity
+
+description
+Halts if input contains an odd number of a's.  Goes into an infinite loop for an even number of a's
+
+vertices
+0 R 0.25 0.2
+1 R 0.75 0.2
+2 L 0.25 0.8
+3 L 0.75 0.8
+4 H 0.75 0.5
+
+edges
+0 1 a b 0.2
+0 2 # # 0.3
+1 0 a b 0.2
+1 4 # #
+2 0 # # 0.3
+2 3 b a 0.2
+3 2 b a 0.2
+
+tapes
+[a] a a a a
+[a]
+[a] a a a a a a a
+[a] a a a a a a a a a 
